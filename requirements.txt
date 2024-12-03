@@ -63,8 +63,6 @@ platformdirs==4.3.6
 # via virtualenv
 pre-commit==3.8.0
 # via scheduler (pyproject.toml)
-psycopg==3.2.3
-# via scheduler (pyproject.toml)
 pydantic==2.10.2
 # via openai
 pydantic-core==2.27.1
@@ -84,13 +82,11 @@ tqdm==4.67.1
 typing-extensions==4.12.2
 # via
 #   openai
-#   psycopg
 #   pydantic
 #   pydantic-core
 tzdata==2024.2
 # via
 #   django
-#   psycopg
 urllib3==2.2.3
 # via requests
 virtualenv==20.28.0
