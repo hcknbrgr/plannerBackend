@@ -12,9 +12,33 @@
 
    - Call OpenAI with details
    - Handle response from OpenAI
-      - DB schema
-         - Project
-         - Tasks / child of project?
+
+```
+from openai import OpenAI
+
+client = OpenAI()
+
+completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {
+            "role": "user",
+            "content": "Write a haiku about recursion in programming.",
+        },
+    ],
+)
+
+"""
+EXAMPLE OF RESPONSE:
+ChatCompletionMessage(content='Functions call themselves,  \nInfinite loops of logic,   \nDepths of thought unfold.  ', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None)
+"""
+print(completion.choices[0].message)
+```
+
+   - DB schema
+      - Project
+      - Tasks / child of project?
 * Send OpenAI response to frontend and refresh
 
 * Break Frontend and Backend into different folders
