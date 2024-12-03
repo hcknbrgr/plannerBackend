@@ -2,7 +2,6 @@
 
 ## Current Project -
 * Refactor front and back end into two repositories
-* Get Backend up and running
 * Get frontend basic features up and running
 ## Next Up
 * Implement testing using factoryboy `https://factoryboy.readthedocs.io/en/stable/index.html`
@@ -57,9 +56,8 @@ print(completion.choices[0].message)
 # <CENTER>THE PLAN </CENTER>
 ### 1. **Backend Development with Python**
    - **Framework**: Django for the backend.
-   - **Database**: Currently using SQLite3, eventually transition to Postgres
+   - **Database**: Currently using SQLite3, eventually transition to Postgres using psycopg
      - Django ORM to interact with DB.
-   - **Authentication**: FUTURE: Use OAuth 2.0 with Google's API for authentication. Libraries like `Authlib` or `python-social-auth` can help.
 
 ### 2. **Task Decomposition with LLM**
    - Bought tokens with OpenAI's API.
@@ -70,6 +68,7 @@ print(completion.choices[0].message)
    - Integrate testing and security checks in your pipeline, such as unit tests (pytest), code quality checks (flake8), and dependency vulnerability scanning (Snyk).
 
 ### 4. **Authentication Services (Google Accounts)**
+   - **Authentication**: Use OAuth 2.0 with Google's API for authentication. Libraries like `Authlib` or `python-social-auth` can help.
    - Use **Google Identity Services** (OAuth 2.0) for authentication. This provides both web and mobile login options, streamlining user access across platforms.
    - Implement role-based authentication (user, admin, etc.) to differentiate user access levels.
 
@@ -90,7 +89,3 @@ print(completion.choices[0].message)
    - Task dependencies: A system where tasks can be linked or broken into subtasks.
    - Notifications for deadlines or task updates.
    - Integrate natural language inputs for tasks and use LLMs to break them into smaller steps automatically.
-
----
-
-This setup provides flexibility, scalability, and a modern stack for building a task tracker. Do you have a preferred cloud provider, or would you like more advice on setting up the mobile side?
