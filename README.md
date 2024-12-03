@@ -15,6 +15,8 @@ LLM: OpenAI
     * `./.venv/scripts/activate` if on a Windows environment
 * Install dependencies using the `requirements.txt` file
     * `pip install -r requirements.txt`
+* Install pre-commit hooks
+    * `pre-commit install`
 
 ### Updating Backend Dependencies
 * We use `pip-tools` to manage our `requirements.txt` field
