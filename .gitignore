@@ -1,2 +1,19 @@
-.venv
-scheduler-react/db.sqlite3
+#python virtual env
+.venv/
+venv*/
+env/
+environment.yml
+
+#vscode settings
+.vscode/
+
+#db
+db.sqlite3
+
+#django
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+*.pyc
