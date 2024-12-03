@@ -1,9 +1,8 @@
 from django.contrib import admin
 
-from planner.models import Todo
+from planner.models.todo.todo import Todo
 
 
-@admin.register(Todo)
 class TodoAdmin(admin.ModelAdmin):
     list_display = ("title", "description", "completed")
 

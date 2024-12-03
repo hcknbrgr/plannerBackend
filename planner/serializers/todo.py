@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from ..models import Todo
+from planner.models import todo
 
 
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Todo
+        model = todo
         fields = ("id", "title", "description", "completed")

@@ -1,13 +1,16 @@
 # TODO'S
 
-## Current Project - Frontend
+## Current Project -
+* Refactor front and back end into two repositories
+* Get Backend up and running
+* Get frontend basic features up and running
+## Next Up
+* Implement testing using factoryboy `https://factoryboy.readthedocs.io/en/stable/index.html`
+* Frontend --
 
 `https://codesandbox.io/p/sandbox/react-modal-ecosystem-redux-version-4cmnyy?from-embed`
 *  Refactor modals into subfolders to enable modal for create/edit and modal for decompose
 *  Create API to call refactor with details
-
-## Next Up
-
 * Handle backend for OpenAI
 
    - Call OpenAI with details
