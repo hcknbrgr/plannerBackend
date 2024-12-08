@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 
 from planner.models.todo.todo import Todo
-from planner.serializers.todo import TodoSerializer
+from planner.serializers.todo.todo import TodoSerializer
 
 
 class TodoView(viewsets.ModelViewSet):

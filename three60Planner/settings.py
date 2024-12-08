@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # 3rd part CORS management
     "corsheaders",
+    # API management
     "rest_framework",
+    # Main app
     "planner",
 ]
 
