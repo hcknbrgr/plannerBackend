@@ -7,7 +7,7 @@ class TodoFactory(factory.django.DjangoModelFactory):
 
     title = factory.Faker("name")
     description = factory.Faker("sentence")
-    completed = factory.fuzzy.FuzzyChoice(choices=[True, False])
+    # completed = factory.fuzzy.FuzzyChoice(choices=[True, False])
 
     class Meta:
         model = Todo
