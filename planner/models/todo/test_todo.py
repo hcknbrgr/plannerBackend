@@ -11,4 +11,4 @@ def test_todo_creation_incomplete(todo_factory):
     td = todo_factory(completed=False)
     assert td.title is not None
     assert td.description is not None
-    assert td.completed
+    assert not td.completed
