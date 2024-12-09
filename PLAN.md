@@ -1,19 +1,22 @@
 # TODO'S
 
-## Current Project -
-* Refactor front and back end into two repositories
-* Get frontend basic features up and running
-## Next Up
-* Implement testing using factoryboy `https://factoryboy.readthedocs.io/en/stable/index.html`
-* Frontend --
+## Current Sprint -
+* Handle backend for OpenAI
+   - Create a prompt with detailed breakdown of expectation and specific format for return of data
+      - i.e. decompose this into as many 6 minute tasks as necessary, return with numbered list with x number of options and y characters.
+   - Call OpenAI with details
+   - Analyze results
+   - Plan DB storage and relations
+   - Handle response from OpenAI
+
+
+## Backlog
+* Frontend -- Convert to Typescript
 
 `https://codesandbox.io/p/sandbox/react-modal-ecosystem-redux-version-4cmnyy?from-embed`
 *  Refactor modals into subfolders to enable modal for create/edit and modal for decompose
-*  Create API to call refactor with details
-* Handle backend for OpenAI
+* Create API to call refactor with details
 
-   - Call OpenAI with details
-   - Handle response from OpenAI
 
 ```
 from openai import OpenAI
@@ -43,9 +46,7 @@ print(completion.choices[0].message)
       - Tasks / child of project?
 * Send OpenAI response to frontend and refresh
 
-* Break Frontend and Backend into different folders
-
-* Learn how to implement tests for front and backend
+* Learn how to implement tests for front
 
 * Implement Authentication from OAuth with Google
 
