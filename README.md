@@ -17,8 +17,11 @@ LLM: OpenAI
     * `pip install -r requirements.txt`
 * Install pre-commit hooks
     * `pre-commit install`
+* Install developer dependencies using the `requirements-dev.txt` file
+    * `pip install -r requirements-dev.txt`
 
 ### Updating Backend Dependencies
+* Developer requirements will be manually added to `requirements-dev.txt` to minimize requirements for deployment.
 * We use `pip-tools` to manage our `requirements.txt` field
     * Whenever we update any of our dependencies or add a new one, update the requirement in:
         * `pyproject.toml`
@@ -33,3 +36,8 @@ LLM: OpenAI
 * Confirm all migrations have been completed: `python manage.py makemigrations`
 * Once migrations are made, migrate any changes: `python manage.py migrate`
 * Run the backend server: `python manage.py runserver`
+
+### Development Tools
+* TDD -
+    * Testing Suite: `pytest` and `pytest-django`
+    * Fixtures replacement tool - `factory_boy`

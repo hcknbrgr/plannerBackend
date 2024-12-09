@@ -61,8 +61,6 @@ openai==1.55.2
 # via scheduler (pyproject.toml)
 platformdirs==4.3.6
 # via virtualenv
-pre-commit==3.8.0
-# via scheduler (pyproject.toml)
 pydantic==2.10.2
 # via openai
 pydantic-core==2.27.1
@@ -89,5 +87,3 @@ tzdata==2024.2
 #   django
 urllib3==2.2.3
 # via requests
-virtualenv==20.28.0
-# via pre-commit
