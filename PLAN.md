@@ -3,7 +3,7 @@
 ## Current Sprint -
 * Handle backend for OpenAI
    - Create a prompt with detailed breakdown of expectation and specific format for return of data
-      - i.e. decompose this into as many 6 minute tasks as necessary, return with numbered list with x number of options and y characters.
+      - "ELI5, Break down large tasks into smaller less than 10 subtasks. Each task should take less than six minutes.  Respond in a consistent JSON format with each subtask being numbered and paired with the task."
    - Call OpenAI with details
    - Analyze results
    - Plan DB storage and relations
@@ -51,6 +51,7 @@ print(completion.choices[0].message)
 * Implement Authentication from OAuth with Google
 
 * Learn how to use Docker
+
 
 
 
