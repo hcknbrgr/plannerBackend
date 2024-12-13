@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Interactive django shell and various extensions
+    "django_extensions",
     # 3rd part CORS management
     "corsheaders",
     # API management

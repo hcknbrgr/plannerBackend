@@ -7,5 +7,9 @@ class Todo(models.Model):
     description = models.TextField()
     completed = models.BooleanField(default=False)
 
+    # def add_subtasks(self, subtasks):
+    #     for task in subtasks:
+    #         Subtask.objects.create(todo=self, description=subtasks)
+
     def __str__(self):
         return self.title

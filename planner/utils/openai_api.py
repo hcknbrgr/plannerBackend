@@ -18,5 +18,5 @@ def break_down_task(description):
             ],
         )
         return completion.choices[0].message
-    except Exception:
-        return []
+    except Exception as e:
+        return [e]
