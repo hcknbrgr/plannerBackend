@@ -16,4 +16,4 @@ class Subtask(models.Model):
         ordering = ["step"]
 
     def __str__(self):
-        return str(self.step) + " " + str(self.description)
+        return str(self.step) + ": " + str(self.description)
