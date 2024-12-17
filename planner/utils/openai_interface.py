@@ -4,6 +4,7 @@ import openai
 
 
 def openai_decompose(description):
+    print(f"Description: {description}")
     try:
         client = openai.OpenAI()
         completion = client.chat.completions.create(
@@ -15,11 +16,11 @@ def openai_decompose(description):
                 },
                 {
                     "role": "user",
-                    "content": "Break this task into subtasks: {description}",
+                    "content": f"{description}",
                 },
             ],
         )
-        return completion.choices[0].message
+        return completion.choices[0].message.content
     except Exception as e:
         return [e]
 

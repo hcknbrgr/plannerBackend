@@ -1,9 +1,5 @@
 import pytest
 
-# from planner.models.todo.todo import Todo
-
-# from planner.testing.factories import TodoFactory
-
 
 @pytest.mark.django_db
 def test_todo_creation_incomplete(todo_factory):
