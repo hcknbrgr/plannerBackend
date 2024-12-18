@@ -6,4 +6,5 @@ from planner.models.todo.todo import Todo
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
-        fields = ("id", "title", "description", "completed")
+        fields = ["id", "title", "description", "completed"]
+        read_only_fields = ["id"]
