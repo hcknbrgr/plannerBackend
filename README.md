@@ -41,3 +41,6 @@ LLM: OpenAI
 * TDD -
     * Testing Suite: `pytest` and `pytest-django`
     * Fixtures replacement tool - `factory_boy`
+
+# CHANGELOG
+* 20250204 - Finished basic frontend implementation of API, included checkbox functionality for task completed
