@@ -1,6 +1,9 @@
 # TODO'S
 
 ## Current Sprint -
+* Create new todo list items from openAI results in backend
+
+## Backlog
 * Handle backend for OpenAI
    - Create a prompt with detailed breakdown of expectation and specific format for return of data
       - "ELI5, Break down large tasks into smaller less than 10 subtasks. Each task should take less than six minutes.  Respond in a consistent JSON format with each subtask being numbered and paired with the task."
@@ -9,13 +12,7 @@
    - Plan DB storage and relations
    - Handle response from OpenAI
 
-
-## Backlog
-* Frontend -- Convert to Typescript
-
-`https://codesandbox.io/p/sandbox/react-modal-ecosystem-redux-version-4cmnyy?from-embed`
-*  Refactor modals into subfolders to enable modal for create/edit and modal for decompose
-* Create API to call refactor with details
+* Create API to call decompose with details
 
 
 ```
