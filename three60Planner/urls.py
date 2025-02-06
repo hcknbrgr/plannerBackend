@@ -23,6 +23,7 @@ from planner import views
 
 router = routers.DefaultRouter()
 router.register(r"todos", views.TodoView, "todo")
+router.register(r"subtasks", views.SubtaskView, "subtask")
 
 
 urlpatterns = [
