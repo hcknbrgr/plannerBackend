@@ -1,3 +1,6 @@
+import pytest
+
+from planner.models.subtask.subtask import Subtask
 from planner.utils.openai_interface import transform_response
 
 response = """
@@ -10,17 +13,28 @@ response = """
     }"""
 
 
-def test_transformed_response():
-    task, subtask = transform_response(response)
-
-    expected_out_task = "Break this task into subtasks"
-    expected_subtask = {
+@pytest.mark.django_db
+def test_transformed_response(todo_factory):
+    task, subtasks = transform_response(response)
+    td = todo_factory(description="Break this task into subtasks")
+    expected_subtasks = {
         "1": "Identify the main components of the task",
         "2": "Divide the task into smaller logical steps",
     }
 
-    assert task == expected_out_task
-    assert subtask == expected_subtask
+    assert task == td.description
+    assert subtasks == expected_subtasks
+
+
+@pytest.mark.django_db
+def test_create_subtasks(todo_factory):
+    _, subtasks = transform_response(response)
+    td = todo_factory(description="Break this task into subtasks")
+
+    # generate_subtasks(td, subtasks)
+
+    assert Subtask.objects.filter(todo=td).exists()
+    assert Subtask.objects.filter(todo=td).count() == 2
 
 
 # @pytest.mark.django_db
