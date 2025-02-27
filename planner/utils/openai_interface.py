@@ -1,6 +1,7 @@
 import json
 
 import openai
+from django.apps import apps
 
 
 def openai_decompose(description):
@@ -33,3 +34,11 @@ def transform_response(message):
     except json.JSONDecodeError as e:
         return "JSON Decode Error", str(e)
     return task, subtasks
+
+
+def generate_subtasks(todo, subtasks):
+    s = []
+    Subtask = apps.get_model("planner", "Subtask")
+    for key, value in subtasks.items():
+        s.append(Subtask(todo=todo, step=int(key), description=value))
+    Subtask.objects.bulk_create(s)
