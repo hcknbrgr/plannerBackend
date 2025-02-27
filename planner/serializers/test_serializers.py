@@ -21,3 +21,18 @@ def test_create_todo():
     assert r.json()["title"] == "This is a test item."
     assert Todo.objects.count() == 1
     assert Todo.objects.first().description == "testing in pytest"
+
+
+def test_create_todo_empty_title():
+    """ensure the title is filled out"""
+    client = APIClient()
+    url = reverse("todo-list")
+
+    payload = {
+        "title": "",
+        "description": "empty title",
+    }
+    r = client.post(url, payload, format="json")
+
+    assert r.status_code == 400
+    assert "title" in r.json()
