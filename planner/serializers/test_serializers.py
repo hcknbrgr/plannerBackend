@@ -2,6 +2,7 @@ import pytest
 from django.urls import reverse
 from rest_framework.test import APIClient
 
+from planner.models.subtask.subtask import Subtask
 from planner.models.todo.todo import Todo
 
 
@@ -36,3 +37,15 @@ def test_create_todo_empty_title():
 
     assert r.status_code == 400
     assert "title" in r.json()
+
+
+@pytest.mark.django_db
+def test_generate_subtasks(todo_factory):
+    client = APIClient()
+    todo_item = todo_factory(title="break down")
+
+    url = reverse("generate_subtasks", args=[todo_item.id])
+    r = client.post(url)
+
+    assert r.status_code == 200
+    assert Subtask.objects.filter(todo_item=todo_item).exists()
