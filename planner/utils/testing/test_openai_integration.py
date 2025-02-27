@@ -16,6 +16,7 @@ response = """
 
 @pytest.mark.django_db
 def test_transformed_response(todo_factory):
+    """Ensure responses are broken down from openai response"""
     task, subtasks = transform_response(response)
     td = todo_factory(description="Break this task into subtasks")
     expected_subtasks = {
@@ -29,6 +30,7 @@ def test_transformed_response(todo_factory):
 
 @pytest.mark.django_db
 def test_create_subtasks(todo_factory):
+    """ensure subtasks are generated correctly with response and linked to Todo object"""
     _, subtasks = transform_response(response)
     td = todo_factory(description="Break this task into subtasks")
 
