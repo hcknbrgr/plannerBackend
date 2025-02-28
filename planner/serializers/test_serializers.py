@@ -41,11 +41,15 @@ def test_create_todo_empty_title():
 
 @pytest.mark.django_db
 def test_generate_subtasks(todo_factory):
+    """Ensure API implementation creates subtasks. This actively calls OPENAI, skip if not needed"""
     client = APIClient()
-    todo_item = todo_factory(title="break down")
 
-    url = reverse("generate_subtasks", args=[todo_item.id])
-    r = client.post(url)
+    todo_item = Todo.objects.create(
+        title="break down", description="break down"
+    )
+
+    url = reverse("todo-generate-subtasks", kwargs={"pk": todo_item.id})
+    r = client.post(url, {}, format="json")
 
     assert r.status_code == 200
-    assert Subtask.objects.filter(todo_item=todo_item).exists()
+    assert Subtask.objects.filter(todo=todo_item).exists()

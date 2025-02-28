@@ -25,7 +25,6 @@ router = routers.DefaultRouter()
 router.register(r"todos", views.TodoView, "todo")
 router.register(r"subtasks", views.SubtaskView, "subtask")
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),

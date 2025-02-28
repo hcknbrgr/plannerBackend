@@ -33,6 +33,8 @@ def transform_response(message):
         subtasks = parsed_response["subtasks"]
     except json.JSONDecodeError as e:
         return "JSON Decode Error", str(e)
+    except KeyError as e:
+        return "Key Error", str(e)
     return task, subtasks
 
 
