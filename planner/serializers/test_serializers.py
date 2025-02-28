@@ -40,7 +40,7 @@ def test_create_todo_empty_title():
 
 
 @pytest.mark.django_db
-def test_generate_subtasks(todo_factory):
+def test_generate_subtasks():
     """Ensure API implementation creates subtasks. This actively calls OPENAI, skip if not needed"""
     client = APIClient()
 

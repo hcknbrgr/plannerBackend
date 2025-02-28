@@ -13,16 +13,16 @@ class TodoView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
     queryset = Todo.objects.all()
 
+    # TODO: ENSURE PROPER ERROR HANDLING EXISTS
+
     @action(detail=True, methods=["post"])
     def generate_subtasks(self, request, pk=None):
         try:
             todo_obj = Todo.objects.get(id=pk)
-            r = openai_interface.openai_decompose(todo_obj.description)
-            _, subtasks = openai_interface.transform_response(r)
-            openai_interface.generate_subtasks(todo_obj, subtasks)
-            return JsonResponse(
-                {"message": "Subtasks created successfully"}, status=200
-            )
+            r = openai_interface.openai_decompose(todo_obj)
+            if "error" in r:
+                return JsonResponse(r, status=500)  # error
+            return JsonResponse(r, status=200)  # success
         except Todo.DoesNotExist:
             return JsonResponse({"error": "Todo item not found"}, status=404)
 
